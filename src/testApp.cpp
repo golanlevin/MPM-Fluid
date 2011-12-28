@@ -56,14 +56,14 @@ void testApp::setupControlPanel(){
 	gui.addLabel("'f' to toggle fullscreen \n'h' to toggle this panel \n'p' to print postscript");
 	
 	gui.addSlider("# Particles",		"N_PARTICLES",		maxNParticles/4,  1000, maxNParticles, true); 
-	gui.addSlider("Density",			"DENSITY",			5.0,	0, 30.0,	false);	
-	gui.addSlider("Stiffness",			"STIFFNESS",		0.5,	0, 2.0,		false);
+	gui.addSlider("Density",		"DENSITY",		5.0,	0, 30.0,	false);	
+	gui.addSlider("Stiffness",		"STIFFNESS",		0.5,	0, 2.0,		false);
 	gui.addSlider("Bulk Viscosity",		"BULK_VISCOSITY",	3.0,	0, 10.0,	false);
-	gui.addSlider("Elasticity",			"ELASTICITY",		1.0,	0, 4.0,		false);
-	gui.addSlider("Viscosity",			"VISCOSITY",		1.0,	0, 4.0,		false);
-	gui.addSlider("Yield Rate",			"YIELD_RATE",		1.0,	0, 2.0,		false);
-	gui.addSlider("Gravity",			"GRAVITY",			0.002,	0, 0.02,	false);
-	gui.addSlider("Smoothing",			"SMOOTHING",		1.0,	0, 3.0,		false);
+	gui.addSlider("Elasticity",		"ELASTICITY",		1.0,	0, 4.0,		false);
+	gui.addSlider("Viscosity",		"VISCOSITY",		1.0,	0, 4.0,		false);
+	gui.addSlider("Yield Rate",		"YIELD_RATE",		1.0,	0, 2.0,		false);
+	gui.addSlider("Gravity",		"GRAVITY",		0.002,	0, 0.02,	false);
+	gui.addSlider("Smoothing",		"SMOOTHING",		1.0,	0, 3.0,		false);
 	
 	gui.addToggle("Do Obstacles?",		"DO_OBSTACLES",		true); 
 	
@@ -307,12 +307,12 @@ void testApp::update(){
 	// Particles pass 2
 	float densitySetting = gui.getValueF("DENSITY",			0); 
 	float stiffness      = gui.getValueF("STIFFNESS",		0); 
-	float bulkViscosity  = gui.getValueF("BULK_VISCOSITY",	0); 
+	float bulkViscosity  = gui.getValueF("BULK_VISCOSITY",		0); 
 	float elasticity     = gui.getValueF("ELASTICITY",		0); 
 	float viscosity      = gui.getValueF("VISCOSITY",		0); 
 	float yieldRate      = gui.getValueF("YIELD_RATE",		0);
-	bool  bGradient		 = gui.getValueB("DENSITY_GRADIENT", 0);
-	bool  bDoObstacles   = gui.getValueB("DO_OBSTACLES",	0); 
+	bool  bGradient	     = gui.getValueB("DENSITY_GRADIENT", 	0);
+	bool  bDoObstacles   = gui.getValueB("DO_OBSTACLES",		0); 
 	float stiffnessBulk  = stiffness * bulkViscosity;
  
 	int nBounced = 0; 
