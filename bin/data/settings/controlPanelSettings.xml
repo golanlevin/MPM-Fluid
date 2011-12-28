@@ -1,0 +1,36 @@
+<DENSITY>
+    <val_0>8</val_0>
+</DENSITY>
+<STIFFNESS>
+    <val_0>0.5</val_0>
+</STIFFNESS>
+<BULK_VISCOSITY>
+    <val_0>3</val_0>
+</BULK_VISCOSITY>
+<ELASTICITY>
+    <val_0>1</val_0>
+</ELASTICITY>
+<VISCOSITY>
+    <val_0>1</val_0>
+</VISCOSITY>
+<YIELD_RATE>
+    <val_0>1</val_0>
+</YIELD_RATE>
+<GRAVITY>
+    <val_0>0.002</val_0>
+</GRAVITY>
+<SMOOTHING>
+    <val_0>1</val_0>
+</SMOOTHING>
+<DENSITY_GRADIENT>
+    <val_0>0</val_0>
+</DENSITY_GRADIENT>
+<N_PARTICLES>
+    <val_0>25000</val_0>
+</N_PARTICLES>
+<VERTICAL_SYNC>
+    <val_0>1</val_0>
+</VERTICAL_SYNC>
+<DO_OBSTACLES>
+    <val_0>1</val_0>
+</DO_OBSTACLES>
