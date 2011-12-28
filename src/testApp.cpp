@@ -333,13 +333,6 @@ void testApp::update(){
 
 		float gxi, pxi;
 		float gxf, gyf;
-
-		float py0 = py[0];
-		float gy0 = gy[0];
-		float py1 = py[1];
-		float gy1 = gy[1];
-		float py2 = py[2];
-		float gy2 = gy[2];
 	
 		int pcxi;
 		for (int i=0; i<3; i++) {
@@ -348,30 +341,15 @@ void testApp::update(){
 			gxi = gx[i];
 			pxi = px[i];
 			
-			// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-			Node *n0 = nrow[pcy  ]; 
-			gxf   =   gxi * py0;
-			gyf   =   pxi * gy0;
-			dudx += n0->u * gxf;
-			dudy += n0->u * gyf;
-			dvdx += n0->v * gxf;
-			dvdy += n0->v * gyf;
-
-			Node *n1 = nrow[pcy+1]; 
-			gxf   =   gxi * py1;
-			gyf   =   pxi * gy1;
-			dudx += n1->u * gxf;
-			dudy += n1->u * gyf;
-			dvdx += n1->v * gxf;
-			dvdy += n1->v * gyf;
-
-			Node *n2 = nrow[pcy+2];
-			gxf   =   gxi * py2;
-			gyf   =   pxi * gy2;
-			dudx += n2->u * gxf;
-			dudy += n2->u * gyf;
-			dvdx += n2->v * gxf;
-			dvdy += n2->v * gyf;
+			for (int j=0; j<3; j++){
+				Node *nj = nrow[pcy + j]; 
+				gxf   =   gxi * py[j];
+				gyf   =   pxi * gy[j];
+				dudx += nj->u * gxf;
+				dudy += nj->u * gyf;
+				dvdx += nj->v * gxf;
+				dvdy += nj->v * gyf;
+			}
 		} 
 	  
 		float w1  = dudy - dvdx;
@@ -507,7 +485,6 @@ void testApp::update(){
 				bounced = true;
 			}
 		}
-		
 	
 		trace *= stiffnessBulk;
 		float T00 = elasticity * p->T00 + viscosity * D00 + pressure + trace;
@@ -521,27 +498,14 @@ void testApp::update(){
 				float ppxi = px[i];
 				float pgxi = gx[i];
 				
-				// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-				Node *n0 = nrow[pcy    ];
-				phi = ppxi * py0;
-				dx  = pgxi * py0;
-				dy  = ppxi * gy0;
-				n0->ax += fx * phi -(dx * T00 + dy * T01);
-				n0->ay += fy * phi -(dx * T01 + dy * T11);
-
-				Node *n1 = nrow[pcy + 1];
-				phi = ppxi * py1;
-				dx  = pgxi * py1;
-				dy  = ppxi * gy1;
-				n1->ax += fx * phi -(dx * T00 + dy * T01);
-				n1->ay += fy * phi -(dx * T01 + dy * T11);
-
-				Node *n2 = nrow[pcy + 2];
-				phi = ppxi * py2;
-				dx  = pgxi * py2;
-				dy  = ppxi * gy2;
-				n2->ax += fx * phi -(dx * T00 + dy * T01);
-				n2->ay += fy * phi -(dx * T01 + dy * T11);
+				for (int j=0; j<3; j++){
+					Node *nj = nrow[pcy + j ];
+					phi = ppxi * py[j];
+					dx  = pgxi * py[j];
+					dy  = ppxi * gy[j];
+					nj->ax += fx * phi -(dx * T00 + dy * T01);
+					nj->ay += fy * phi -(dx * T01 + dy * T11);
+				}
 			}
 			
 		} else {
@@ -554,25 +518,13 @@ void testApp::update(){
 
 				float ppxi = *(pppxi++); //px[i]; 
 				float pgxi = *(ppgxi++); //gx[i];
-
-				// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-				Node *n0 = nrow[pcy  ];
-				dx  = pgxi * py0;
-				dy  = ppxi * gy0;
-				n0->ax -= (dx * T00 + dy * T01);
-				n0->ay -= (dx * T01 + dy * T11);
-
-				Node *n1 = nrow[pcy+1];
-				dx  = pgxi * py1;
-				dy  = ppxi * gy1;
-				n1->ax -= (dx * T00 + dy * T01);
-				n1->ay -= (dx * T01 + dy * T11);
-
-				Node *n2 = nrow[pcy+2];
-				dx  = pgxi * py2;
-				dy  = ppxi * gy2;
-				n2->ax -= (dx * T00 + dy * T01);
-				n2->ay -= (dx * T01 + dy * T11);
+				for (int j=0; j<3; j++){
+					Node *nj = nrow[pcy+j];
+					dx  = pgxi * py[j];
+					dy  = ppxi * gy[j];
+					nj->ax -= (dx * T00 + dy * T01);
+					nj->ay -= (dx * T01 + dy * T11);
+				}
 
 			}
 		}
@@ -607,22 +559,12 @@ void testApp::update(){
 		for (int i=0; i<3; i++) {
 			Node **nrow = grid[pcx + i];
 			float ppxi = px[i];
-
-			// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-			Node *n0 = nrow[pcy    ];
-			phi   = ppxi * py[0];
-			p->u += phi * n0->ax;
-			p->v += phi * n0->ay;
-
-			Node *n1 = nrow[pcy + 1];
-			phi   = ppxi * py[1];
-			p->u += phi * n1->ax;
-			p->v += phi * n1->ay;
-
-			Node *n2 = nrow[pcy + 2];
-			phi   = ppxi * py[2];
-			p->u += phi * n2->ax;
-			p->v += phi * n2->ay;
+			for (int j=0; j<3; j++){
+				Node *nj = nrow[pcy + j];
+				phi   = ppxi * py[j];
+				p->u += phi * nj->ax;
+				p->v += phi * nj->ay;
+			}
 		}
 
 		p->v += gravity;
@@ -651,9 +593,6 @@ void testApp::update(){
 		} else if (yf > bottomEdge) {
 			p->v += bottomEdge - yf - ofRandom(wallBounceMaxRandomness);
 		} 
-		
-		
-		
 
 
 		float pu = p->u;
@@ -661,22 +600,12 @@ void testApp::update(){
 		for (int i=0; i<3; i++) {
 			Node **nrow = grid[pcx + i];
 			float ppxi = px[i];
-
-			// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-			Node *n0 = nrow[pcy    ];
-			phi = ppxi * py[0];
-			n0->u += phi * pu;
-			n0->v += phi * pv;
-
-			Node *n1 = nrow[pcy + 1];
-			phi = ppxi * py[1];
-			n1->u += phi * pu;
-			n1->v += phi * pv;
-
-			Node *n2 = nrow[pcy + 2];
-			phi = ppxi * py[2];
-			n2->u += phi * pu;
-			n2->v += phi * pv;
+			for (int j=0; j<3; j++){
+				Node *nj = nrow[pcy + j];
+				phi = ppxi * py[j];
+				nj->u += phi * pu;
+				nj->v += phi * pv;
+			}
 		}
 	}
 
@@ -707,22 +636,12 @@ void testApp::update(){
 		for (int i=0; i<3; i++) {
 			Node **nrow = grid[pcx + i];
 			float ppxi = px[i]; 
-
-			// Here, an unrolled loop. Used to be pcy+j as j:[0,1,2]
-			Node *n0 = nrow[pcy    ];
-			phi = ppxi * py[0];
-			gu += phi * n0->u;
-			gv += phi * n0->v;
-
-			Node *n1 = nrow[pcy + 1];
-			phi = ppxi * py[1];
-			gu += phi * n1->u;
-			gv += phi * n1->v;
-
-			Node *n2 = nrow[pcy + 2];
-			phi = ppxi * py[2];
-			gu += phi * n2->u;
-			gv += phi * n2->v;
+			for (int j=0; j<3; j++){
+				Node *nj = nrow[pcy + j];
+				phi = ppxi * py[j];
+				gu += phi * nj->u;
+				gv += phi * nj->v;
+			}
 		}
 
 		p->x += (p->gu = gu);
