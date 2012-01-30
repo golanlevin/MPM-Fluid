@@ -275,10 +275,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>13</integer>
-									<integer>11</integer>
-									<integer>10</integer>
+									<integer>5</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -318,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>A69C734D14D60B6600C0EABC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ofxMPMParticle.cpp</string>
+								<string>project.pbxproj</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,28 +324,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>A69C734E14D60B6600C0EABC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ofxMPMParticle.cpp</string>
+										<string>project.pbxproj</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A621C3F914D72B51008AA7F0</string>
+										<string>A621C43514D72EA0008AA7F0</string>
 										<key>history</key>
 										<array>
-											<string>A69C735F14D60E8500C0EABC</string>
-											<string>A621C36114D71DA5008AA7F0</string>
-											<string>A621C36C14D71F4F008AA7F0</string>
-											<string>A621C3C814D726E9008AA7F0</string>
-											<string>A621C3DC14D72845008AA7F0</string>
-											<string>A621C3EF14D72B51008AA7F0</string>
-											<string>A621C3F014D72B51008AA7F0</string>
-											<string>A621C3F114D72B51008AA7F0</string>
-											<string>A621C3F214D72B51008AA7F0</string>
-											<string>A621C3F314D72B51008AA7F0</string>
-											<string>A621C3F414D72B51008AA7F0</string>
-											<string>A621C3F514D72B51008AA7F0</string>
-											<string>A621C3F614D72B51008AA7F0</string>
-											<string>A621C3F714D72B51008AA7F0</string>
-											<string>A621C3F814D72B51008AA7F0</string>
+											<string>A621C43114D72EA0008AA7F0</string>
+											<string>A621C43214D72EA0008AA7F0</string>
+											<string>A621C43314D72EA0008AA7F0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -361,18 +347,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1402, 900}}</string>
+								<string>{{0, 0}, {1402, 897}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1920 1119 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>900pt</string>
+							<string>897pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>173pt</string>
+							<string>176pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -386,7 +372,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1402, 146}}</string>
+										<string>{{10, 27}, {1402, 149}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 59 1920 1119 0 0 1920 1178 </string>
 									</dict>
@@ -470,11 +456,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>A621C2B714D6F7DE008AA7F0</string>
+				<string>A621C42814D72E0D008AA7F0</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>A621C2B814D6F7DE008AA7F0</string>
+				<string>A621C42914D72E0D008AA7F0</string>
 				<string>A69C734D14D60B6600C0EABC</string>
-				<string>A621C2B914D6F7DE008AA7F0</string>
+				<string>A621C42A14D72E0D008AA7F0</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -622,14 +608,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>A621C31314D7116E008AA7F0</string>
+				<string>A621C43714D72EA0008AA7F0</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>A621C31414D7116E008AA7F0</string>
-				<string>A621C31514D7116E008AA7F0</string>
-				<string>A621C31614D7116E008AA7F0</string>
-				<string>A621C31714D7116E008AA7F0</string>
-				<string>A621C31814D7116E008AA7F0</string>
+				<string>A621C43814D72EA0008AA7F0</string>
+				<string>A621C43914D72EA0008AA7F0</string>
+				<string>A621C43A14D72EA0008AA7F0</string>
+				<string>A621C43B14D72EA0008AA7F0</string>
+				<string>A621C43C14D72EA0008AA7F0</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -663,9 +649,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A621C31914D7116E008AA7F0</string>
-		<string>A621C31A14D7116E008AA7F0</string>
-		<string>/Users/jamesgeorge/Documents/XCode_Projects/openFrameworksActiveDevelopment/ProjectWail/apps/wail/MPM-Fluid/ofxMPMFluidExample.xcodeproj</string>
+		<string>A621C43D14D72EA0008AA7F0</string>
+		<string>A621C43E14D72EA0008AA7F0</string>
+		<string>/Users/jamesgeorge/Documents/XCode_Projects/openFrameworksActiveDevelopment/of_preRelease_v007_osx/addons/ofxMPMFluid/example-openFrameworks/ofxMPMFluidExample.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1920 1119 0 0 1920 1178 </string>
