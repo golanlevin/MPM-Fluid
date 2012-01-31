@@ -1,0 +1,28 @@
+/**
+ * ofxMPMFluid.cpp
+ * The MIT License (MIT)
+ * Copyright (c) 2010 respective contributors
+ * 
+ *****************************************
+ * MPM FLuid Simulation Demo
+ * OpenFrameworks version by Golan Levin
+ * http://www.flong.com
+ *
+ * ofxAddon created by James George (@obviousjm)
+ * http://www.jamesgeorge.org
+ *
+ * Original Java version:
+ * http://grantkot.com/MPM/Liquid.html
+ *
+ * Flash version:
+ * Copyright iunpin ( http://wonderfl.net/user/iunpin )
+ * MIT License ( http://www.opensource.org/licenses/mit-license.php )
+ * Downloaded from: http://wonderfl.net/c/6eu4
+ *
+ * Javascript version:
+ * Copyright Stephen Sinclair (radarsat1) ( http://www.music.mcgill.ca/~sinclair )
+ * MIT License ( http://www.opensource.org/licenses/mit-license.php )
+ * Downloaded from: http://www.music.mcgill.ca/~sinclair/blog 
+
+ * Requires ofxControlPanel from https://github.com/kylemcdonald/ofxControlPanel
+ */
